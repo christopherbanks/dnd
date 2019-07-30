@@ -1,20 +1,27 @@
 #include <stdio.h>
 #include <cs50.h>
+#include <unistd.h>
 
 int main(void)
 {
-    string name = get_string("What is your name?\n");
-    printf("Heyo %s.\n", name);
-    int i = get_int("How old are you %s?\n", name); 
-        if (i <= 30){printf("What a great age to be playing DnD!\n");}
-        if (i >= 29){printf("Never too old for that nerd shit!\n");}
+    printf("\nHello, my dude.\n");
+    sleep(2);
+    string name = get_string("What is your name?\n\n");
+    printf("\nHeyo %s.\n", name);
+   
+    int i = get_int("How old are you?\n\n"); 
+        if (i < 30){printf("\nCool, %i! What a great age to be playing DnD!\n", i);}
+        if (i > 29 && i < 50){printf("\nWow, %i! Never too old for that nerd shit!\n", i);}
+        if (i > 49){printf("\nHoly shit, %i!\nDamn %s you're old as fuck!\n", i, name);}
+    sleep(3);
     char answer;
-    printf("%s, I am going to ask you a series of questions to determine your DnD character.\nSome you will answer with either a 'y' for yes, 'n' for no, or 's' for sometimes.\nOthers you will choose one out of three options by replying 'a', 'b', or 'c'.\nDo you understand?\n", name);
+    printf("%s, I am going to ask you a series of questions to determine your DnD character.\nSome you will answer with either a 'y' for yes, 'n' for no, or 's' for sometimes.\nOthers you will choose one out of three options by replying 'a', 'b', or 'c'.\n", name);
+    sleep(9);
+    printf("Do you understand? (y/n)\n\n");
     scanf(" %c", &answer);
-    if (answer == 'y'){ printf("Great. Are you ready for your first question?\n");}
-    if (answer == 'n'){ printf("Really? Maybe DnD is not for you.\n");}
-    if (answer == 's'){ printf("Very funny %s. Are you ready for your first question?\n", name);}
+    if (answer == 'y'){ printf("\nGreat. Are you ready for your first question?\n\n");}
+    if (answer == 'n'){ printf("\nReally? Maybe DnD is not for you.\n\n");}
     scanf(" %c", &answer);
-    if (answer == 'y'){printf("question 1\n");}
+    if (answer == 'y'){printf("\nFirst question: -------------\n(y/n/s)\n");}
 
 }
