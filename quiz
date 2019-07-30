@@ -17,11 +17,11 @@ int main(void)
     char answer;
     printf("%s, I am going to ask you a series of questions to determine your DnD character.\nSome you will answer with either a 'y' for yes, 'n' for no, or 's' for sometimes.\nOthers you will choose one out of three options by replying 'a', 'b', or 'c'.\n", name);
     sleep(9);
-    printf("Do you understand? (y/n)\n\n");
+    printf("Do you understand?\n(y/n)\n\n");
     scanf(" %c", &answer);
     if (answer == 'y'){ printf("\nGreat. Are you ready for your first question?\n\n");}
     if (answer == 'n'){ printf("\nReally? Maybe DnD is not for you.\n\n");}
     scanf(" %c", &answer);
-    if (answer == 'y'){printf("\nFirst question: -------------\n(y/n/s)\n");}
+    if (answer == 'y'){printf("\nFirst question: -------------\n(y/n/s)\n\n");}
 
 }
