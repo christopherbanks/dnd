@@ -6,49 +6,48 @@
 int main(void)
 {
     char answer;
-    int alignment = 0;
-    int lawfullness = 0;
-    int role = 0;
-    
+    int alignment = 0, lawfullness = 0, role = 0;
+
     //introduction
     printf("\nHello, my dude.\n");
-    sleep(0);
     string name = get_string("What is your name?\n\n");
     printf("\nHeyo %s.\n", name);
     int i = get_int("How old are you?\n\n"); 
-        if (i < 30){printf("\nCool, %i! What a great age to be playing DnD!\n", i);}
-        if (i > 29 && i < 50){printf("\nWow, %i! Never too old for that nerd shit!\n", i);}
-        if (i > 49){printf("\nHoly shit, %i!\nDamn %s you're old as fuck!\n", i, name);}
-    sleep(0);
-    do {printf("%s, I am going to ask you a series of questions to determine your DnD    character.\nSome you will answer with either a 'y' for yes, 'n' for no, or 's' for sometimes.\nOthers you will choose one out of three options by replying 'a', 'b', or 'c'.\n", name);
-    sleep(0);
-    printf("Do you understand?\n(y/n)\n\n");
-    scanf(" %c", &answer);}while (answer != 'y' && answer != 'n');
-        if (answer == 'n'){ printf("\nReally? Maybe DnD is not for you.\n\n"); exit(0);}
+    
+    if (i < 30){printf("\nCool, %i! What a great age to be playing DnD!\n", i);}
+    if (i > 29 && i < 50){printf("\nWow, %i! Never too old for that nerd shit!\n", i);}
+    if (i > 49){printf("\nHoly shit, %i!\nDamn %s you're old as fuck!\n", i, name);}
+    
+    do {
+        printf("%s, I am going to ask you a series of questions to determine your DnD    character.\nSome you will answer with either a 'y' for yes, 'n' for no, or 's' for sometimes.\nOthers you will choose one out of three options by replying 'a', 'b', or 'c'.\n", name);
+        printf("Do you understand?\n(y/n)\n\n");
+        scanf(" %c", &answer);} while (answer != 'y' && answer != 'n');
+    
+    if (answer == 'n'){ 
+        printf("\nReally? Maybe DnD is not for you.\n\n"); 
+        exit(0);}
             
     //first question
-
-       {do{printf("\nFirst question:\n\nIf you found a $20 bill on the sidewalk, your first instinct\nwould be to look around for who might have dropped it.\n(y/n/s)\n\n");
+    do {
+        printf("\nFirst question:\n\nIf you found a $20 bill on the sidewalk, your first instinct\nwould be to look around for who might have dropped it.\n(y/n/s)\n\n");
         scanf(" %c", &answer);
         if (answer == 'y') alignment = alignment +2;
-        if (answer == 's') alignment = alignment +1;}while (answer != 'y' && answer != 'n'&& answer != 's');}
+        if (answer == 's') alignment = alignment +1;} while (answer != 'y' && answer != 'n'&& answer != 's');
         
     //second question
-       {do{printf("\nSecond question:\n\nIf there were only a few squares of toilet paper left after you've\njust taken a huge messy dump, you would replace the roll and spray some\nfebreeze up in there.\n(y/n/s)\n\n");
+    do {
+        printf("\nSecond question:\n\nIf there were only a few squares of toilet paper left after you've\njust taken a huge messy dump, you would replace the roll and spray some\nfebreeze up in there.\n(y/n/s)\n\n");
         scanf(" %c", &answer);
         if (answer == 'y') alignment = alignment +2;
-        if (answer == 's') alignment = alignment +1;}while (answer != 'y' && answer != 'n'&& answer != 's');}
+        if (answer == 's') alignment = alignment +1;} while (answer != 'y' && answer != 'n'&& answer != 's');
     
     //third question
-       {do{printf("\nA toddler runs past you cutting you off and almost causing you to trip.\nThe kid the trips, falls flat on his face, and starts to cry.\nYou:\na) Laugh right in that little bastards face.\nb) Rush over to see if he's okay and if you can help.\nc) Walk away and mind your own business.\n\n");
+    do {
+        printf("\nA toddler runs past you cutting you off and almost causing you to trip.\nThe kid the trips, falls flat on his face, and starts to cry.\nYou:\na) Laugh right in that little bastards face.\nb) Rush over to see if he's okay and if you can help.\nc) Walk away and mind your own business.\n\n");
         scanf(" %c", &answer);
         if (answer == 'b') alignment = alignment +2;
-        if (answer == 'c') alignment = alignment +1;}while (answer != 'a' && answer != 'b'&& answer != 'c');}
-
-
+        if (answer == 'c') alignment = alignment +1;} while (answer != 'a' && answer != 'b'&& answer != 'c');
     
-    
-    
-        {printf("\n%i\n\n", alignment);}
+    printf("\n%i\n\n", alignment);
 
 }
