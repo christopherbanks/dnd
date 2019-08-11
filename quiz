@@ -5,10 +5,7 @@
 
 int main(void)
 {
-    char answer;
-    int alignment = 0;
-    int lawfullness = 0;
-    int role = 0;
+    char answer; int alignment = 0; int law = 0; int role = 0;
     
     //introduction
     printf("\nHello, my dude.\n");
@@ -20,35 +17,89 @@ int main(void)
         if (i > 29 && i < 50){printf("\nWow, %i! Never too old for that nerd shit!\n", i);}
         if (i > 49){printf("\nHoly shit, %i!\nDamn %s you're old as fuck!\n", i, name);}
     sleep(0);
-    do {printf("%s, I am going to ask you a series of questions to determine your DnD    character.\nSome you will answer with either a 'y' for yes, 'n' for no, or 's' for sometimes.\nOthers you will choose one out of three options by replying 'a', 'b', or 'c'.\n", name);
-    sleep(0);
-    printf("Do you understand?\n(y/n)\n\n");
-    scanf(" %c", &answer);}while (answer != 'y' && answer != 'n');
-        if (answer == 'n'){ printf("\nReally? Maybe DnD is not for you.\n\n"); exit(0);}
+    do {
+        printf("%s, To determine the class and character alignment of your DnD character you will answer\na series of multiple choice questions. Choose whichever statement you agree with the most.\nReply with either a, b, or c.\n", name);
+        sleep(0);
+        printf("Do you understand?\n\na) Yes, let's get started!\n\nb) No. I'd rather play Skyrim.\n\n");
+        scanf(" %c", &answer);
+    }while (answer != 'a' && answer != 'b');
+        if (answer == 'b'){ printf("\nI used to be an adventurer like you, then I took an arrow to the knee!\n\n"); exit(0);}
             
     //first question
-
-       {do{printf("\nFirst question:\n\nIf you found a $20 bill on the sidewalk, your first instinct\nwould be to look around for who might have dropped it.\n(y/n/s)\n\n");
-        scanf(" %c", &answer);
-        if (answer == 'y') alignment = alignment +2;
-        if (answer == 's') alignment = alignment +1;}while (answer != 'y' && answer != 'n'&& answer != 's');}
-        
-    //second question
-       {do{printf("\nSecond question:\n\nIf there were only a few squares of toilet paper left after you've\njust taken a huge messy dump, you would replace the roll and spray some\nfebreeze up in there.\n(y/n/s)\n\n");
-        scanf(" %c", &answer);
-        if (answer == 'y') alignment = alignment +2;
-        if (answer == 's') alignment = alignment +1;}while (answer != 'y' && answer != 'n'&& answer != 's');}
-    
-    //third question
-       {do{printf("\nA toddler runs past you cutting you off and almost causing you to trip.\nThe kid the trips, falls flat on his face, and starts to cry.\nYou:\na) Laugh right in that little bastards face.\nb) Rush over to see if he's okay and if you can help.\nc) Walk away and mind your own business.\n\n");
+    do{
+        printf("\nFirst question:\n\nYou find a wallet at a bus stop, your first instinct is:\n\na) I wonder if there's any money inside\n\nb) Maybe there is an ID inside and I can return this wallet to whoever lost it\n\nc) I'm not going to take anything, but it's not my responsibility to deal with someone else's lost wallet\n\n");
         scanf(" %c", &answer);
         if (answer == 'b') alignment = alignment +2;
-        if (answer == 'c') alignment = alignment +1;}while (answer != 'a' && answer != 'b'&& answer != 'c');}
-
+        if (answer == 'c') alignment = alignment +1;
+    }while (answer != 'a' && answer != 'b'&& answer != 'c');
 
     
+    //second question
+    do{
+        printf("\nSecond question:\n\nYou have to pick one TV show to watch for the next 5 hours:\n\na) The Office\n\nb) Seinfeld \n\nc) Friends\n\n");
+        scanf(" %c", &answer);
+        if (answer == 'a') alignment = alignment +2;
+        if (answer == 'b') alignment = alignment +1;
+    }while (answer != 'a' && answer != 'b' && answer != 'c');
     
-    
-        {printf("\n%i\n\n", alignment);}
+    //third question
+    do{
+        printf("\nThird Question:\n\nYou are heading a project at work and enlist the help of a few of your colleagues. The project\ngoes so well that your boss and your boss's boss call you in for a meeting and want to give you a promotion.\nThey cite some of the work from the project, but none of it is actually anything you did, in fact all of it was done by\none of the colleagues you asked to help you. This particular colleague you are not quite friends with, in fact they are somewhat of a loner,\nbut over the last few weeks you have gotten to know them and realized they've lived quite a hard life, which explains their misanthropy.\nHow do you react when they offer you the promotion?\n\na) I take the promotion along with any of the credit they want to give me! I was the one who got this team together,\nand besides, this colleague wouldn't be good fit for management anyway.\n\nb) I thank them for their praises and say something vague like 'I couldn't have done it without my team!'\n\nc) The truth. I inform them that the work their so impressed by was actually done by my colleague\nand I had no part of those specific areas beyond having enlisted their help.\n\n");
+        scanf(" %c", &answer);
+        if (answer == 'c') alignment = alignment +2;
+        if (answer == 'b') alignment = alignment +1;
+    }while (answer != 'a' && answer != 'b'&& answer != 'c');
 
+    //fourth question
+    do{
+        printf("\nFourth Question:\n\nShortly before your best friend's wedding, you discover definitive proof that their spouse-to-be\nis cheating on them with a well known wealthy celebrity who is also married. You:\n\na) Don't get involved and risk ruining your best friends wedding day.\n\nb) Tell your best friend right away and spare them an unhappy marriage.\n\nc) Blackmail the wealthy celebrity and use some of the money to buy your friend something nice.\n\n");
+        scanf(" %c", &answer);
+        if (answer == 'b') alignment = alignment +2;
+        if (answer == 'a') alignment = alignment +1;
+    }while (answer != 'a' && answer != 'b'&& answer != 'c');
+    
+    //fifth question
+        do{
+            printf("\nFifth Question:\n\nYour sibling calls you up and explains the police are on their way to your house and you need to lie\nand say that they were over your house last night to get them off a hit-and-run/ destriction of property charge.\nThey explain that they were very tired the night before and accidentally hit their neighbors mailbox. While there is\nno proof, the neighbor identified your sibling's car and the damage to the car matches the placement of the mailbox.\nAll they need is for you to lie and say that they had spent the night at your place and they will not face charges.\nSuddenly there is a knock at the door, it is the police looking to take your statement.\n\na) I am going to be honest with the police and say they were not at my place\nlast night and let them face the consequences they've earned.\n\nb) I'm not going to answer the door and see how things play out without my intervention.\nBesides, I'm weary of lying to the cops and geting caught.\n\nc) Of course I'll do whatever I can to keep my family out of trouble.\n\n");
+            scanf(" %c", &answer);
+            if (answer == 'c') law = law +2;
+            if (answer == 'b') law = law +1;
+        }while (answer != 'a' && answer != 'b'&& answer != 'c');
+    
+        //sixth question
+        do{
+            printf("\nSixth Question\n\nA bank heist has taken place in your area and there is a large reward for any information\nregarding the criminals. The police come by your house and seem to have a lot of questions\nabout your neighbor. You overhear mention of a 'raid' on the neighbors house to be executed\npending a warrant. Later that day you find yourself over your neighbors house and\nrealize that they were indeed involved with the robbery, as you recognize one of the trademark\nJimmy Carter masks used in the heist in their garage. In addition to this, your neighbor,\nwho had previously fell on hard times and was unable keep up with the mortgage and\ncollege tuition for their kids, seems to be doing well and is suddenly no longer worried about money.\nWhat do you do?\n\na) Tell the police about the mask, giving them grounds for a warrant and collect your hefty\nreward for assisting the hand of justice.\n\nb) Don't get involved. You don't want your neighbors arrest on your conscience, but you also\ndon't want to assist a criminal.\n\nc) Warn your neighbor about the cop's interest in them and the mention of a possible raid you overheard.\n\n");
+            scanf(" %c", &answer);
+            if (answer == 'c') law = law +2;
+            if (answer == 'b') law = law +1;
+        }while (answer != 'a' && answer != 'b'&& answer != 'c');
+    
+        //seventh question
+        do{
+            printf("\nSeventh Question:\n\nYou're in a park with your friend when suddenly they have a severe asthma attack and they're without\nan inhaler. Luckily, someone nearby has an inhaler but when you ask to use it and explain the emergency,\nthey tell you they want $1000 for it. In this moment you quickly realize three things: first, you could\neasily overpower this person. second, you have $1000 in your pocket, but that's your rent money and your\npretty sure this is extortion and illegal. Third, there is a pharmacy down the street that you *might* be\nable to make it to and back in time. What do you do?\n\na) Forcibly take the inhaler from this bitch and save your friend.\n\nb) Pay them the $1000.\n\nc) Take your chances getting to the pharmacy.\n\n");
+            scanf(" %c", &answer);
+            if (answer == 'a') law = law +2;
+            if (answer == 'b') law = law +1;
+        }while (answer != 'a' && answer != 'b'&& answer != 'c');
+    
+        //eighth question
+        do{
+            printf("\nEighth Question:\n\nYou work at a software company that processes millions of microtransactions daily, their biggest\nclient ovbiously being EA Games. Your colleague tells you that they've created a virus that is\nundetecible and will transfer the fractions of a cent that get rounded off each transaction into\nan account, resulting in several thousand dollars a month that would otherwise be unaccounted for.\nThey want your help doublechecking their code and in return offer you an even split of the profits.\nOn one hand, this is clearly grand-theft and conspiracy, on the other hand this money would go\ncompletely unnoticed, the company you work for treats you like shit, and EA Games is genuinely evil.\nWhat do you do?\n\na) Report your coworker and potentially get a promotion for your whistleblowing.\n\nb) Politly decline, but not report your coworker.\n\nc) Agree to help your coworker and doublecheck their code for any stupid mistakes,\nlike misplacing a decimal and siphoning off too much money.\n\n");
+            scanf(" %c", &answer);
+            if (answer == 'c') law = law +2;
+            if (answer == 'a') law = law +1;
+        }while (answer != 'a' && answer != 'b'&& answer != 'c');
+    
+           
+        if (( alignment == 6 || alignment == 7 || alignment == 8) && law == 0 && law == 1 && law == 2){printf("\nlawful good\n\n");}
+        if (( alignment == 3 || alignment == 4 || alignment == 5) && law == 0 && law == 1 && law == 2){printf("\nlawful neutral\n\n");}
+        if (( alignment == 0 || alignment == 1 || alignment == 2) && law == 0 && law == 1 && law == 2){printf("\nlawful evil\n\n");}
+        if (( alignment == 6 || alignment == 7 || alignment == 8) && law == 3 && law == 4 && law == 5){printf("\nneutral good\n\n");}
+        if (( alignment == 3 || alignment == 4 || alignment == 5) && law == 3 && law == 4 && law == 5){printf("\ntrue neutral\n\n");} 
+        if (( alignment == 0 || alignment == 1 || alignment == 2) && law == 3 && law == 4 && law == 5){printf("\nneutral evil\n\n");}
+        if (( alignment == 6 || alignment == 7 || alignment == 8) && law == 6 && law == 7 && law == 8){printf("\nchaotic good\n\n");}
+        if (( alignment == 3 || alignment == 4 || alignment == 5) && law == 6 && law == 7 && law == 8){printf("\nchaotic neutral\n\n");}
+        if (( alignment == 0 || alignment == 1 || alignment == 2) && law == 6 && law == 7 && law == 8){printf("\nchaotic evil\n\n");}
+        return 0;
+    
 }
