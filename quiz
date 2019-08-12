@@ -90,16 +90,15 @@ int main(void)
             if (answer == 'a') law = law +1;
         }while (answer != 'a' && answer != 'b'&& answer != 'c');
     
-           
-        if (( alignment == 6 || alignment == 7 || alignment == 8) && law == 0 && law == 1 && law == 2){printf("\nlawful good\n\n");}
-        if (( alignment == 3 || alignment == 4 || alignment == 5) && law == 0 && law == 1 && law == 2){printf("\nlawful neutral\n\n");}
-        if (( alignment == 0 || alignment == 1 || alignment == 2) && law == 0 && law == 1 && law == 2){printf("\nlawful evil\n\n");}
-        if (( alignment == 6 || alignment == 7 || alignment == 8) && law == 3 && law == 4 && law == 5){printf("\nneutral good\n\n");}
-        if (( alignment == 3 || alignment == 4 || alignment == 5) && law == 3 && law == 4 && law == 5){printf("\ntrue neutral\n\n");} 
-        if (( alignment == 0 || alignment == 1 || alignment == 2) && law == 3 && law == 4 && law == 5){printf("\nneutral evil\n\n");}
-        if (( alignment == 6 || alignment == 7 || alignment == 8) && law == 6 && law == 7 && law == 8){printf("\nchaotic good\n\n");}
-        if (( alignment == 3 || alignment == 4 || alignment == 5) && law == 6 && law == 7 && law == 8){printf("\nchaotic neutral\n\n");}
-        if (( alignment == 0 || alignment == 1 || alignment == 2) && law == 6 && law == 7 && law == 8){printf("\nchaotic evil\n\n");}
-        return 0;
-    
+    {
+        if (( alignment == 6 || alignment == 7 || alignment == 8) && (law == 0 || law == 1 || law == 2)){printf("\nlawful good\n\n");}
+   else if (( alignment == 3 || alignment == 4 || alignment == 5) && (law == 0 || law == 1 || law == 2)){printf("\nlawful neutral\n\n");}
+   else if (( alignment == 0 || alignment == 1 || alignment == 2) && (law == 0 || law == 1 || law == 2)){printf("\nlawful evil\n\n");}
+   else if (( alignment == 6 || alignment == 7 || alignment == 8) && (law == 3 || law == 4 || law == 5)){printf("\nneutral good\n\n");}
+   else if (( alignment == 3 || alignment == 4 || alignment == 5) && (law == 3 || law == 4 || law == 5)){printf("\ntrue neutral\n\n");} 
+   else if (( alignment == 0 || alignment == 1 || alignment == 2) && (law == 3 || law == 4 || law == 5)){printf("\nneutral evil\n\n");}
+   else if (( alignment == 6 || alignment == 7 || alignment == 8) && (law == 6 || law == 7 || law == 8)){printf("\nchaotic good\n\n");}
+   else if (( alignment == 3 || alignment == 4 || alignment == 5) && (law == 6 || law == 7 || law == 8)){printf("\nchaotic neutral\n\n");}
+   else if (( alignment == 0 || alignment == 1 || alignment == 2) && (law == 6 || law == 7 || law == 8)){printf("\nchaotic evil\n\n");}
+    }
 }
